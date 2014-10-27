@@ -49,7 +49,6 @@ function onSubmit(eventObject) {
 	//Ensure that the zip code is in the correct format.
 	var zipRegExp = new RegExp('^\\d{5}$');
 	var zipCheck = zipRegExp.test(z.value);
-	console.log(zipCheck);
 
 	if (!zipCheck) {
 		if (eventObject.preventDefault) {
@@ -66,13 +65,10 @@ function onSubmit(eventObject) {
 	var age;
 	var dob = new Date(b.value);
 	var currDate = new Date();
-	console.log(dob);
-	console.log(currDate);
 	age = currDate.getUTCFullYear() - dob.getUTCFullYear();
 
 	if (dob.getUTCMonth() > currDate.getUTCMonth()) {
 		age--;
-		console.log("earlier month");
 	}
 	else if (dob.getUTCMonth() == currDate.getUTCMonth() && dob.getUTCDate() < currDate.getUTCDate()) {
 		age--;
