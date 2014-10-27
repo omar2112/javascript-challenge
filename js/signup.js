@@ -75,12 +75,16 @@ function onSubmit(eventObject) {
 	}
 
 	if (age < 13) {
+		b.style.borderColor = "#FF0000";
 		document.getElementById("birthdateMessage").innerHTML = "You can't sign up if you're under 13";
 		if (eventObject.preventDefault) {
        	 		eventObject.preventDefault();
     	 	 }
     	 	 eventObject.returnValue = false;
     	 	 isValid = false;
+	} else {
+		b.style.borderColor = "#FFFFFF";
+		document.getElementById("birthdateMessage").innerHTML = "";
 	}
     
     // Don't let the form submit if any of the validation tests did not succeed. 
